@@ -13,10 +13,13 @@ namespace CassaTeller
 {
     public partial class Form1 : Form
     {
+        CassaManagement CassaManagement;
         public Form1()
         {
             InitializeComponent();
-            
+            CassaManagement = new CassaManagement();
+
+
         }
     }
 }

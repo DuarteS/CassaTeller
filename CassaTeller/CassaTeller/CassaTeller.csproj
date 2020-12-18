@@ -65,6 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CassaItem.cs" />
+    <Compile Include="CassaManagement.cs" />
     <Compile Include="DBaccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
