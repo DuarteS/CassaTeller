@@ -42,8 +42,8 @@ namespace CassaTeller
             }
         }
 
-        double total;
-        public double Total
+        decimal total;
+        public decimal Total
         {
             get
             {
@@ -85,7 +85,7 @@ namespace CassaTeller
             }
         }
 
-        public CassaItem(DateTime dateTime,int worker,double total,bool inCassa,string description)
+        public CassaItem(DateTime dateTime,int worker,decimal total,bool inCassa,string description)
         {
             DateTime = dateTime;
             Worker = worker;

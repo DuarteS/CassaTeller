@@ -12,14 +12,14 @@ namespace CassaTeller
         public CassaManagement()
         {
             DBaccess = DBaccess.Instance;
-            //CassaItem item = new CassaItem(DateTime.Now.AddDays(2), 1,12.3,true,"Test1");
+            //CassaItem item = new CassaItem(DateTime.Now.AddDays(2), 1,12.3m,true,"Test1");
             //CassaItem item2 = new CassaItem(DateTime.Now.AddDays(2), 1, 13.55, false, "Test2");
-            //CassaItem item3 = new CassaItem(DateTime.Now.AddDays(2), 1, 1322.55, false, "This TRUE xxx");
+            //CassaItem item3 = new CassaItem(DateTime.Now.AddDays(2), 1, 1322.55, false, "duarte");
             //CassaAddItem(item);
             //CassaAddItem(item2);
             //CassaAddItem(item3);
             //GetDayItems(DateTime.Now);
-            DayDifference(DateTime.Now.AddDays(-3), DateTime.Now.AddDays(2));
+            //DayDifference(DateTime.Now, DateTime.Now.AddDays(1));
         }
 
         public void CassaAddItem(CassaItem cassaItem)
@@ -34,7 +34,7 @@ namespace CassaTeller
             }
         }
 
-        public double DayDifference(DateTime day1, DateTime day2)
+        public decimal DayDifference(DateTime day1, DateTime day2)
         {
             if (!DateCassaCompleted(GetDayItems(day1)))
             {
@@ -47,9 +47,9 @@ namespace CassaTeller
 
             bool bFirstCassa = false;
             bool bLastCassa = false;
-            double dFirstCassa = 0.00;
-            double dLastCassa = 0.00;
-            double dOutCassa = 0.00;
+            decimal dFirstCassa = 0;
+            decimal dLastCassa = 0;
+            decimal dOutCassa = 0;
             CassaItem[] itemRange = DBaccess.GetCassaItemRange(day1,day2);
 
             itemRange = SortItems(itemRange);
@@ -78,7 +78,7 @@ namespace CassaTeller
                 }
             }
 
-            double dTotal =  (dLastCassa + dOutCassa) - dFirstCassa;
+            decimal dTotal =  (dLastCassa + dOutCassa) - dFirstCassa;
 
 
             return dTotal;

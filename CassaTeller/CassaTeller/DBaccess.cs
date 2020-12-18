@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Globalization;
 
 namespace CassaTeller
 {
@@ -23,6 +24,7 @@ namespace CassaTeller
                 return instance;
             }
         }
+
 
         readonly OleDbConnection connection;
 
@@ -73,7 +75,7 @@ namespace CassaTeller
                 cmd.Connection = connection;
 
                 cmd.Parameters.AddWithValue("@worker", cassaItem.Worker);
-                cmd.Parameters.AddWithValue("@total", cassaItem.Total);
+                cmd.Parameters.AddWithValue("@total", cassaItem.Total.ToString().Replace(".",","));
                 cmd.Parameters.AddWithValue("@time", cassaItem.DateTime.TimeOfDay);
                 cmd.Parameters.AddWithValue("@desc", cassaItem.Description);
                 cmd.Parameters.AddWithValue("@date", cassaItem.DateTime.Date);
@@ -107,7 +109,7 @@ namespace CassaTeller
                 DateTime time = Convert.ToDateTime(dr[2]);
                 DateTime dateTime = date.Date + time.TimeOfDay;
                 int worker = int.Parse(dr[3].ToString());
-                double total = double.Parse(dr[4].ToString());
+                decimal total = decimal.Parse(dr[4].ToString());
                 bool inCassa = (bool)dr[5];
                 string desc = dr[6].ToString();
                 CassaItem item = new CassaItem(dateTime, worker, total, inCassa, desc);
@@ -128,7 +130,7 @@ namespace CassaTeller
             cmd.Parameters.AddWithValue("@date", item.DateTime.Date);
             cmd.Parameters.AddWithValue("@time", item.DateTime.TimeOfDay);
             cmd.Parameters.AddWithValue("@worker", item.Worker);
-            cmd.Parameters.AddWithValue("@total", item.Total);
+            cmd.Parameters.AddWithValue("@total", item.Total.ToString().Replace(".", ","));
             cmd.Parameters.AddWithValue("@inCassa", item.InCassa);
             cmd.Parameters.AddWithValue("@desc", item.Description);
             cmd.ExecuteNonQuery();
@@ -152,7 +154,7 @@ namespace CassaTeller
                 DateTime time = Convert.ToDateTime(dr[2]);
                 DateTime dateTime = date.Date + time.TimeOfDay;
                 int worker = int.Parse(dr[3].ToString());
-                double total = double.Parse(dr[4].ToString());
+                decimal total = decimal.Parse(dr[4].ToString());
                 bool inCassa = (bool)dr[5];
                 string desc = dr[6].ToString();
                 CassaItem item = new CassaItem(dateTime,worker,total,inCassa,desc);
@@ -162,6 +164,40 @@ namespace CassaTeller
             connection.Close();
 
             return cassaItems.ToArray();
+        }
+
+        public Worker[] GetWorkers()
+        {
+            OleDbCommand cmd = connection.CreateCommand();
+            connection.Open();
+            cmd.CommandText = "SELECT * FROM Workers";
+            cmd.Connection = connection;
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            List<Worker> Workers = new List<Worker>();
+
+            while (dr.Read())
+            {
+                Worker worker = new Worker(int.Parse(dr[0].ToString()),dr[1].ToString(), dr[2].ToString());
+                Workers.Add(worker);
+            }
+
+            connection.Close();
+
+            return Workers.ToArray();
+        }
+
+
+        public void addWorker(string firstName, string lastName)
+        {
+            OleDbCommand cmd = connection.CreateCommand();
+            connection.Open();
+            cmd.CommandText = "INSERT INTO Workers(`FirstName`,`LastName`) VALUES(@firstName , @lastName );";
+            cmd.Connection = connection;
+            cmd.Parameters.AddWithValue("@firstName", firstName);
+            cmd.Parameters.AddWithValue("@lastName", lastName);
+            cmd.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }
