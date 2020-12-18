@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CassaTeller
 {
-    public partial class Form1 : Form
+    public partial class CassaPage : Form
     {
         
         const decimal cent1 = 0.01m;
@@ -32,11 +32,12 @@ namespace CassaTeller
 
         readonly CassaManagement CassaManagement;
         readonly WorkerManagment WorkerManagment;
-        public Form1()
+        public CassaPage()
         {
             InitializeComponent();
             CassaManagement = new CassaManagement();
             WorkerManagment = new WorkerManagment();
+
             FormFill();
 
 
@@ -47,8 +48,6 @@ namespace CassaTeller
             dtpDate.Value = DateTime.Now;
             dtpTime.Value = DateTime.Now;
             rbCassa.Checked = true;
-
-            
 
             cmbWorker.Items.Clear();
             foreach (Worker worker in WorkerManagment.GetWorkers())
@@ -136,6 +135,18 @@ namespace CassaTeller
             {
                 rbCassa.Checked = true;
             }
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            AdminPage adminPage = new AdminPage(this);
+            this.Visible = false;
+            adminPage.Visible = true;
+        }
+
+        private void CassaPage_VisibleChanged(object sender, EventArgs e)
+        {
+            FormFill();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CassaTeller
 {
-    partial class Form1
+    partial class CassaPage
     {
         /// <summary>
         /// Required designer variable.
@@ -69,13 +69,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabBonAfromen = new System.Windows.Forms.TabPage();
+            this.tbDesc = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tbTotal = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.btnOpslaan = new System.Windows.Forms.Button();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.tbTotal = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbDesc = new System.Windows.Forms.TextBox();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.gbType.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -487,6 +487,39 @@
             this.tabBonAfromen.Text = "Bon/Afromen";
             this.tabBonAfromen.UseVisualStyleBackColor = true;
             // 
+            // tbDesc
+            // 
+            this.tbDesc.Location = new System.Drawing.Point(91, 62);
+            this.tbDesc.Multiline = true;
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(159, 63);
+            this.tbDesc.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(19, 62);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(64, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Opmerking :";
+            // 
+            // tbTotal
+            // 
+            this.tbTotal.Location = new System.Drawing.Point(91, 22);
+            this.tbTotal.Name = "tbTotal";
+            this.tbTotal.Size = new System.Drawing.Size(94, 20);
+            this.tbTotal.TabIndex = 1;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(19, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(43, 13);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Totaal :";
+            // 
             // btnOpslaan
             // 
             this.btnOpslaan.Location = new System.Drawing.Point(674, 339);
@@ -516,39 +549,6 @@
             this.dtpTime.Size = new System.Drawing.Size(122, 20);
             this.dtpTime.TabIndex = 10;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(19, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 13);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Totaal :";
-            // 
-            // tbTotal
-            // 
-            this.tbTotal.Location = new System.Drawing.Point(91, 22);
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.Size = new System.Drawing.Size(94, 20);
-            this.tbTotal.TabIndex = 1;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(19, 62);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(64, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Opmerking :";
-            // 
-            // tbDesc
-            // 
-            this.tbDesc.Location = new System.Drawing.Point(91, 62);
-            this.tbDesc.Multiline = true;
-            this.tbDesc.Name = "tbDesc";
-            this.tbDesc.Size = new System.Drawing.Size(159, 63);
-            this.tbDesc.TabIndex = 3;
-            // 
             // btnAdmin
             // 
             this.btnAdmin.Location = new System.Drawing.Point(27, 339);
@@ -557,8 +557,9 @@
             this.btnAdmin.TabIndex = 11;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // Form1
+            // CassaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -573,8 +574,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "CassaPage";
             this.Text = "Form1";
+            this.VisibleChanged += new System.EventHandler(this.CassaPage_VisibleChanged);
             this.gbType.ResumeLayout(false);
             this.gbType.PerformLayout();
             this.tabControl1.ResumeLayout(false);
