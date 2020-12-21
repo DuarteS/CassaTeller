@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CassaTeller
+namespace KassaTeller
 {
-    public partial class CassaPage : Form
+    public partial class KassaPage : Form
     {
         
         const decimal cent1 = 0.01m;
@@ -30,12 +30,12 @@ namespace CassaTeller
         const decimal euro200 = 200;
         const decimal euro500 = 500;
 
-        readonly CassaManagement CassaManagement;
+        readonly KassaManagement KassaManagement;
         readonly WorkerManagment WorkerManagment;
-        public CassaPage()
+        public KassaPage()
         {
             InitializeComponent();
-            CassaManagement = new CassaManagement();
+            KassaManagement = new KassaManagement();
             WorkerManagment = new WorkerManagment();
 
             FormFill();
@@ -47,12 +47,32 @@ namespace CassaTeller
         {
             dtpDate.Value = DateTime.Now;
             dtpTime.Value = DateTime.Now;
-            rbCassa.Checked = true;
+            rbKassa.Checked = true;
+
+            num1cent.Value = 0;
+            num2cent.Value = 0;
+            num5cent.Value = 0;
+            num10cent.Value = 0;
+            num20cent.Value = 0;
+            num50cent.Value = 0;
+            num1euro.Value = 0;
+            num2euro.Value = 0;
+            num5euro.Value = 0;
+            num10euro.Value = 0;
+            num20euro.Value = 0;
+            num50euro.Value = 0;
+            num100euro.Value = 0;
+            num200euro.Value = 0;
+            num500euro.Value = 0;
+
+            tbTotal.Text = "";
+            tbDesc.Text = "";
+
 
             cmbWorker.Items.Clear();
             foreach (Worker worker in WorkerManagment.GetWorkers())
             {
-                cmbWorker.Items.Add(worker.ID+"- "+worker.FirstName + " " + worker.LastName);
+                cmbWorker.Items.Add(worker.ID+"- "+worker.FirstName);
             }
             cmbWorker.SelectedIndex = 0;
         }
@@ -64,9 +84,9 @@ namespace CassaTeller
 
             string Desc = "";
 
-            if (rbCassa.Checked)
+            if (rbKassa.Checked)
             {
-                Desc += "Dag Cassa";
+                Desc += "Dag Kassa";
 
                 total += cent1 * num1cent.Value;
                 total += cent2 * num2cent.Value;
@@ -96,13 +116,15 @@ namespace CassaTeller
                 Desc += tbDesc.Text;
             }
 
-            CassaItem cassaItem = new CassaItem(DateTime.Now,Convert.ToInt32(cmbWorker.Text.Split('-')[0]),total,rbCassa.Checked,Desc);
-            CassaManagement.CassaAddItem(cassaItem);
+            KassaItem cassaItem = new KassaItem(DateTime.Now,Convert.ToInt32(cmbWorker.Text.Split('-')[0]),total,rbKassa.Checked,Desc);
+            KassaManagement.KassaAddItem(cassaItem);
+
+            FormFill();
         }
 
-        private void rbCassa_CheckedChanged(object sender, EventArgs e)
+        private void rbKassa_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbCassa.Checked)
+            if (rbKassa.Checked)
             {
                 tabControl1.SelectedIndex = 0;
             }
@@ -133,7 +155,7 @@ namespace CassaTeller
             }
             if (tabControl1.SelectedIndex == 0)
             {
-                rbCassa.Checked = true;
+                rbKassa.Checked = true;
             }
         }
 
@@ -144,7 +166,7 @@ namespace CassaTeller
             adminPage.Visible = true;
         }
 
-        private void CassaPage_VisibleChanged(object sender, EventArgs e)
+        private void KassaPage_VisibleChanged(object sender, EventArgs e)
         {
             FormFill();
         }

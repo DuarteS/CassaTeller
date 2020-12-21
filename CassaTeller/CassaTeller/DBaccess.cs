@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Globalization;
 
-namespace CassaTeller
+namespace KassaTeller
 {
 
     class DBaccess
@@ -30,7 +30,7 @@ namespace CassaTeller
 
         public DBaccess()
         {
-            connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= CassaData.accdb");
+            connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= KassaData.accdb");
             try
             {
                 connection.Open();
@@ -48,14 +48,14 @@ namespace CassaTeller
             
         }
 
-        public void UpdateDayCassa(CassaItem cassaItem)
+        public void UpdateDayKassa(KassaItem cassaItem)
         {
             OleDbCommand cmd = connection.CreateCommand();
             connection.Open();
-            cmd.CommandText = "SELECT * FROM Cassa WHERE `Date` = @date AND `InCassa` = @inCassa;";
+            cmd.CommandText = "SELECT * FROM Kassa WHERE `Date` = @date AND `InKassa` = @inKassa;";
             cmd.Connection = connection;
             cmd.Parameters.AddWithValue("@date", cassaItem.DateTime.Date);
-            cmd.Parameters.AddWithValue("@inCassa", cassaItem.InCassa);
+            cmd.Parameters.AddWithValue("@inKassa", cassaItem.InKassa);
             OleDbDataReader dr = cmd.ExecuteReader();
 
             bool Found = false;
@@ -71,7 +71,7 @@ namespace CassaTeller
             {
                 cmd = connection.CreateCommand();
                 connection.Open();
-                cmd.CommandText = "UPDATE `Cassa` SET `Worker` = @worker ,`Total` = @total , `Time` = @time,`Description` = @desc WHERE `Date` = @date AND `InCassa` = @inCassa;";
+                cmd.CommandText = "UPDATE `Kassa` SET `Worker` = @worker ,`Total` = @total , `Time` = @time,`Description` = @desc WHERE `Date` = @date AND `InKassa` = @inKassa;";
                 cmd.Connection = connection;
 
                 cmd.Parameters.AddWithValue("@worker", cassaItem.Worker);
@@ -79,29 +79,29 @@ namespace CassaTeller
                 cmd.Parameters.AddWithValue("@time", cassaItem.DateTime.TimeOfDay);
                 cmd.Parameters.AddWithValue("@desc", cassaItem.Description);
                 cmd.Parameters.AddWithValue("@date", cassaItem.DateTime.Date);
-                cmd.Parameters.AddWithValue("@inCassa", cassaItem.InCassa);
+                cmd.Parameters.AddWithValue("@inKassa", cassaItem.InKassa);
                 cmd.ExecuteNonQuery();
                 connection.Close();
             } else
             {
-                AddCassaItem(cassaItem);
+                AddKassaItem(cassaItem);
             }
 
 
         }
 
 
-        public CassaItem[] GetCassaItemRange(DateTime day1, DateTime day2)
+        public KassaItem[] GetKassaItemRange(DateTime day1, DateTime day2)
         {
             OleDbCommand cmd = connection.CreateCommand();
             connection.Open();
-            cmd.CommandText = "SELECT * FROM Cassa WHERE (Date BETWEEN  @startDay  AND @endDay );";
+            cmd.CommandText = "SELECT * FROM Kassa WHERE (Date BETWEEN  @startDay  AND @endDay );";
             cmd.Connection = connection;
             cmd.Parameters.AddWithValue("@startDay", day1.Date);
             cmd.Parameters.AddWithValue("@endDay", day2.Date);
             OleDbDataReader dr = cmd.ExecuteReader();
 
-            List<CassaItem> cassaItems = new List<CassaItem>();
+            List<KassaItem> cassaItems = new List<KassaItem>();
 
             while (dr.Read())
             {
@@ -110,9 +110,9 @@ namespace CassaTeller
                 DateTime dateTime = date.Date + time.TimeOfDay;
                 int worker = int.Parse(dr[3].ToString());
                 decimal total = decimal.Parse(dr[4].ToString());
-                bool inCassa = (bool)dr[5];
+                bool inKassa = (bool)dr[5];
                 string desc = dr[6].ToString();
-                CassaItem item = new CassaItem(dateTime, worker, total, inCassa, desc);
+                KassaItem item = new KassaItem(dateTime, worker, total, inKassa, desc);
                 cassaItems.Add(item);
             }
 
@@ -121,32 +121,32 @@ namespace CassaTeller
             return cassaItems.ToArray();
         }
 
-        public void AddCassaItem(CassaItem item)
+        public void AddKassaItem(KassaItem item)
         {
             OleDbCommand cmd = connection.CreateCommand();
             connection.Open();
-            cmd.CommandText = "INSERT INTO Cassa(`Date`,`Time`,`Worker`,`Total`,`InCassa`,`Description`) VALUES( @date , @time , @worker , @total , @inCassa , @desc );";
+            cmd.CommandText = "INSERT INTO Kassa(`Date`,`Time`,`Worker`,`Total`,`InKassa`,`Description`) VALUES( @date , @time , @worker , @total , @inKassa , @desc );";
             cmd.Connection = connection;
             cmd.Parameters.AddWithValue("@date", item.DateTime.Date);
             cmd.Parameters.AddWithValue("@time", item.DateTime.TimeOfDay);
             cmd.Parameters.AddWithValue("@worker", item.Worker);
             cmd.Parameters.AddWithValue("@total", item.Total.ToString().Replace(".", ","));
-            cmd.Parameters.AddWithValue("@inCassa", item.InCassa);
+            cmd.Parameters.AddWithValue("@inKassa", item.InKassa);
             cmd.Parameters.AddWithValue("@desc", item.Description);
             cmd.ExecuteNonQuery();
             connection.Close();
         }
 
-        public CassaItem[] GetCassaDayItems(DateTime selectedDate)
+        public KassaItem[] GetKassaDayItems(DateTime selectedDate)
         {
             OleDbCommand cmd = connection.CreateCommand();
             connection.Open();
-            cmd.CommandText = "SELECT * FROM Cassa WHERE Date = @date";
+            cmd.CommandText = "SELECT * FROM Kassa WHERE Date = @date";
             cmd.Connection = connection;
             cmd.Parameters.AddWithValue("@date", selectedDate.Date);
             OleDbDataReader dr = cmd.ExecuteReader();
 
-            List<CassaItem> cassaItems = new List<CassaItem>();
+            List<KassaItem> cassaItems = new List<KassaItem>();
 
             while (dr.Read())
             {
@@ -155,9 +155,9 @@ namespace CassaTeller
                 DateTime dateTime = date.Date + time.TimeOfDay;
                 int worker = int.Parse(dr[3].ToString());
                 decimal total = decimal.Parse(dr[4].ToString());
-                bool inCassa = (bool)dr[5];
+                bool inKassa = (bool)dr[5];
                 string desc = dr[6].ToString();
-                CassaItem item = new CassaItem(dateTime,worker,total,inCassa,desc);
+                KassaItem item = new KassaItem(dateTime,worker,total,inKassa,desc);
                 cassaItems.Add(item);
             }
 

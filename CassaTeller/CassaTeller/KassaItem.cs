@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CassaTeller
+namespace KassaTeller
 {
-    class CassaItem
+    class KassaItem
     {
         DateTime dateTime;
         public DateTime DateTime
@@ -59,16 +59,16 @@ namespace CassaTeller
             }
         }
 
-        bool inCassa;
-        public bool InCassa
+        bool inKassa;
+        public bool InKassa
         {
             get
             {
-                return inCassa;
+                return inKassa;
             }
             private set
             {
-                inCassa = value;
+                inKassa = value;
             }
         }
 
@@ -85,12 +85,12 @@ namespace CassaTeller
             }
         }
 
-        public CassaItem(DateTime dateTime,int worker,decimal total,bool inCassa,string description)
+        public KassaItem(DateTime dateTime,int worker,decimal total,bool inKassa,string description)
         {
             DateTime = dateTime;
             Worker = worker;
             Total = total;
-            InCassa = inCassa;
+            InKassa = inKassa;
             Description = description;
         }
     }

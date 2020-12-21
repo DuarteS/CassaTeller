@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80ABB4EC-6FC5-4977-AC29-12724995E9C5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CassaTeller</RootNamespace>
-    <AssemblyName>CassaTeller</AssemblyName>
+    <RootNamespace>KassaTeller</RootNamespace>
+    <AssemblyName>KassaTeller</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ProductName>CassaTeller</ProductName>
+    <PublisherName>DuarteSomsen</PublisherName>
+    <SuiteName>DuarteSomsen</SuiteName>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -87,14 +90,14 @@
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CassaItem.cs" />
-    <Compile Include="CassaManagement.cs" />
+    <Compile Include="KassaItem.cs" />
+    <Compile Include="KassaManagement.cs" />
     <Compile Include="DBaccess.cs" />
-    <Compile Include="CassaPage.cs">
+    <Compile Include="KassaPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CassaPage.Designer.cs">
-      <DependentUpon>CassaPage.cs</DependentUpon>
+    <Compile Include="KassaPage.Designer.cs">
+      <DependentUpon>KassaPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +106,8 @@
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CassaPage.resx">
-      <DependentUpon>CassaPage.cs</DependentUpon>
+    <EmbeddedResource Include="KassaPage.resx">
+      <DependentUpon>KassaPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +117,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CassaTeller_TemporaryKey.pfx" />
     <None Include="packages.config" />

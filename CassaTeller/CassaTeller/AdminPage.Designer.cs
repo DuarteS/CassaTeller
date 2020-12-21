@@ -1,5 +1,5 @@
 ﻿
-namespace CassaTeller
+namespace KassaTeller
 {
     partial class AdminPage
     {
@@ -30,7 +30,7 @@ namespace CassaTeller
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabCassaInfo = new System.Windows.Forms.TabPage();
+            this.tabKassaInfo = new System.Windows.Forms.TabPage();
             this.tbDifferance = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblErrorDay2 = new System.Windows.Forms.Label();
@@ -42,20 +42,20 @@ namespace CassaTeller
             this.label1 = new System.Windows.Forms.Label();
             this.tabWorkers = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.tbLastName = new System.Windows.Forms.TextBox();
             this.btnAddWorker = new System.Windows.Forms.Button();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tabCassaInfo.SuspendLayout();
+            this.tabKassaInfo.SuspendLayout();
             this.tabWorkers.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabCassaInfo);
+            this.tabControl1.Controls.Add(this.tabKassaInfo);
             this.tabControl1.Controls.Add(this.tabWorkers);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -63,24 +63,24 @@ namespace CassaTeller
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabCassaInfo
+            // tabKassaInfo
             // 
-            this.tabCassaInfo.Controls.Add(this.tbDifferance);
-            this.tabCassaInfo.Controls.Add(this.label3);
-            this.tabCassaInfo.Controls.Add(this.lblErrorDay2);
-            this.tabCassaInfo.Controls.Add(this.lblErrorDay1);
-            this.tabCassaInfo.Controls.Add(this.btnDifferance);
-            this.tabCassaInfo.Controls.Add(this.dtpAdmin2);
-            this.tabCassaInfo.Controls.Add(this.dtpAdmin1);
-            this.tabCassaInfo.Controls.Add(this.label2);
-            this.tabCassaInfo.Controls.Add(this.label1);
-            this.tabCassaInfo.Location = new System.Drawing.Point(4, 22);
-            this.tabCassaInfo.Name = "tabCassaInfo";
-            this.tabCassaInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCassaInfo.Size = new System.Drawing.Size(768, 400);
-            this.tabCassaInfo.TabIndex = 0;
-            this.tabCassaInfo.Text = "Cassa Info";
-            this.tabCassaInfo.UseVisualStyleBackColor = true;
+            this.tabKassaInfo.Controls.Add(this.tbDifferance);
+            this.tabKassaInfo.Controls.Add(this.label3);
+            this.tabKassaInfo.Controls.Add(this.lblErrorDay2);
+            this.tabKassaInfo.Controls.Add(this.lblErrorDay1);
+            this.tabKassaInfo.Controls.Add(this.btnDifferance);
+            this.tabKassaInfo.Controls.Add(this.dtpAdmin2);
+            this.tabKassaInfo.Controls.Add(this.dtpAdmin1);
+            this.tabKassaInfo.Controls.Add(this.label2);
+            this.tabKassaInfo.Controls.Add(this.label1);
+            this.tabKassaInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabKassaInfo.Name = "tabKassaInfo";
+            this.tabKassaInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKassaInfo.Size = new System.Drawing.Size(768, 400);
+            this.tabKassaInfo.TabIndex = 0;
+            this.tabKassaInfo.Text = "Kassa Info";
+            this.tabKassaInfo.UseVisualStyleBackColor = true;
             // 
             // tbDifferance
             // 
@@ -165,7 +165,7 @@ namespace CassaTeller
             this.tabWorkers.Padding = new System.Windows.Forms.Padding(3);
             this.tabWorkers.Size = new System.Drawing.Size(768, 400);
             this.tabWorkers.TabIndex = 1;
-            this.tabWorkers.Text = "MedeWerkers";
+            this.tabWorkers.Text = "Medewerkers";
             this.tabWorkers.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -180,39 +180,7 @@ namespace CassaTeller
             this.groupBox1.Size = new System.Drawing.Size(223, 295);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nieuw Medeweker";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Naam :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Achter Naam :";
-            // 
-            // tbFirstName
-            // 
-            this.tbFirstName.Location = new System.Drawing.Point(106, 40);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(100, 20);
-            this.tbFirstName.TabIndex = 3;
-            // 
-            // tbLastName
-            // 
-            this.tbLastName.Location = new System.Drawing.Point(106, 79);
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(100, 20);
-            this.tbLastName.TabIndex = 4;
+            this.groupBox1.Text = "Nieuw Medewerker";
             // 
             // btnAddWorker
             // 
@@ -224,6 +192,38 @@ namespace CassaTeller
             this.btnAddWorker.UseVisualStyleBackColor = true;
             this.btnAddWorker.Click += new System.EventHandler(this.btnAddWorker_Click);
             // 
+            // tbLastName
+            // 
+            this.tbLastName.Location = new System.Drawing.Point(106, 79);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbLastName.TabIndex = 4;
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.Location = new System.Drawing.Point(106, 40);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(100, 20);
+            this.tbFirstName.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Achter Naam :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Naam :";
+            // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,8 +234,8 @@ namespace CassaTeller
             this.Text = "AdminPage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPage_FormClosed);
             this.tabControl1.ResumeLayout(false);
-            this.tabCassaInfo.ResumeLayout(false);
-            this.tabCassaInfo.PerformLayout();
+            this.tabKassaInfo.ResumeLayout(false);
+            this.tabKassaInfo.PerformLayout();
             this.tabWorkers.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -246,7 +246,7 @@ namespace CassaTeller
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabCassaInfo;
+        private System.Windows.Forms.TabPage tabKassaInfo;
         private System.Windows.Forms.TabPage tabWorkers;
         private System.Windows.Forms.Label lblErrorDay2;
         private System.Windows.Forms.Label lblErrorDay1;

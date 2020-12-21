@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CassaTeller
+namespace KassaTeller
 {
     public partial class AdminPage : Form
     {
-        readonly CassaManagement CassaManagement;
+        readonly KassaManagement KassaManagement;
         readonly WorkerManagment WorkerManagment;
-        readonly CassaPage cassaPage;
-        public AdminPage(CassaPage cassaPage)
+        readonly KassaPage cassaPage;
+        public AdminPage(KassaPage cassaPage)
         {
             InitializeComponent(); 
-            CassaManagement = new CassaManagement();
+            KassaManagement = new KassaManagement();
             WorkerManagment = new WorkerManagment();
             this.cassaPage = cassaPage;
         }
@@ -28,9 +28,9 @@ namespace CassaTeller
             DateTime day1 = dtpAdmin1.Value;
             DateTime day2 = dtpAdmin2.Value;
 
-            if (!CassaManagement.DateCassaCompleted(CassaManagement.GetDayItems(day1)))
+            if (!KassaManagement.DateKassaCompleted(KassaManagement.GetDayItems(day1)))
             {
-                lblErrorDay1.Text = "Error : geen Cassa opmaak van dezedag";
+                lblErrorDay1.Text = "Error : geen Kassa opmaak van dezedag";
                 return;
             }
             else
@@ -38,9 +38,9 @@ namespace CassaTeller
                 lblErrorDay1.Text = "";
             }
 
-            if (!CassaManagement.DateCassaCompleted(CassaManagement.GetDayItems(day2)))
+            if (!KassaManagement.DateKassaCompleted(KassaManagement.GetDayItems(day2)))
             {
-                lblErrorDay2.Text = "Error : geen Cassa opmaak van dezedag";
+                lblErrorDay2.Text = "Error : geen Kassa opmaak van dezedag";
                 return;
             } else if (day1>day2) {
                 lblErrorDay2.Text = "Datum 2 kan niet kleiner zijn als dag 1";
@@ -51,7 +51,7 @@ namespace CassaTeller
                 lblErrorDay2.Text = "";
             }
 
-            tbDifferance.Text = CassaManagement.DayDifference(day1,day2).ToString();
+            tbDifferance.Text = KassaManagement.DayDifference(day1,day2).ToString();
 
 
         }
@@ -67,6 +67,10 @@ namespace CassaTeller
             string lastName = tbLastName.Text;
 
             WorkerManagment.AddWorker(firstName,lastName);
+
+            tbFirstName.Text = "";
+            tbLastName.Text = "";
+
 
         }
     }

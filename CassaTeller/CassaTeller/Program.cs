@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CassaTeller
+namespace KassaTeller
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CassaTeller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CassaPage());
+            Application.Run(new KassaPage());
         }
     }
 }

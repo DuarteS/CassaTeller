@@ -1,6 +1,6 @@
-﻿namespace CassaTeller
+﻿namespace KassaTeller
 {
-    partial class CassaPage
+    partial class KassaPage
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,9 @@
             this.gbType = new System.Windows.Forms.GroupBox();
             this.rbAfromen = new System.Windows.Forms.RadioButton();
             this.rbBon = new System.Windows.Forms.RadioButton();
-            this.rbCassa = new System.Windows.Forms.RadioButton();
+            this.rbKassa = new System.Windows.Forms.RadioButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabCassa = new System.Windows.Forms.TabPage();
+            this.tabKassa = new System.Windows.Forms.TabPage();
             this.num500euro = new System.Windows.Forms.NumericUpDown();
             this.num200euro = new System.Windows.Forms.NumericUpDown();
             this.num100euro = new System.Windows.Forms.NumericUpDown();
@@ -79,7 +79,7 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.gbType.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabCassa.SuspendLayout();
+            this.tabKassa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num500euro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num200euro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num100euro)).BeginInit();
@@ -138,7 +138,7 @@
             // 
             this.gbType.Controls.Add(this.rbAfromen);
             this.gbType.Controls.Add(this.rbBon);
-            this.gbType.Controls.Add(this.rbCassa);
+            this.gbType.Controls.Add(this.rbKassa);
             this.gbType.Location = new System.Drawing.Point(106, 204);
             this.gbType.Name = "gbType";
             this.gbType.Size = new System.Drawing.Size(121, 114);
@@ -170,21 +170,21 @@
             this.rbBon.UseVisualStyleBackColor = true;
             this.rbBon.CheckedChanged += new System.EventHandler(this.rbBon_CheckedChanged);
             // 
-            // rbCassa
+            // rbKassa
             // 
-            this.rbCassa.AutoSize = true;
-            this.rbCassa.Location = new System.Drawing.Point(16, 29);
-            this.rbCassa.Name = "rbCassa";
-            this.rbCassa.Size = new System.Drawing.Size(54, 17);
-            this.rbCassa.TabIndex = 7;
-            this.rbCassa.TabStop = true;
-            this.rbCassa.Text = "Cassa";
-            this.rbCassa.UseVisualStyleBackColor = true;
-            this.rbCassa.CheckedChanged += new System.EventHandler(this.rbCassa_CheckedChanged);
+            this.rbKassa.AutoSize = true;
+            this.rbKassa.Location = new System.Drawing.Point(16, 29);
+            this.rbKassa.Name = "rbKassa";
+            this.rbKassa.Size = new System.Drawing.Size(54, 17);
+            this.rbKassa.TabIndex = 7;
+            this.rbKassa.TabStop = true;
+            this.rbKassa.Text = "Kassa";
+            this.rbKassa.UseVisualStyleBackColor = true;
+            this.rbKassa.CheckedChanged += new System.EventHandler(this.rbKassa_CheckedChanged);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabCassa);
+            this.tabControl1.Controls.Add(this.tabKassa);
             this.tabControl1.Controls.Add(this.tabBonAfromen);
             this.tabControl1.Location = new System.Drawing.Point(314, 49);
             this.tabControl1.Name = "tabControl1";
@@ -193,147 +193,147 @@
             this.tabControl1.TabIndex = 7;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabCassa
+            // tabKassa
             // 
-            this.tabCassa.Controls.Add(this.num500euro);
-            this.tabCassa.Controls.Add(this.num200euro);
-            this.tabCassa.Controls.Add(this.num100euro);
-            this.tabCassa.Controls.Add(this.num50euro);
-            this.tabCassa.Controls.Add(this.num20euro);
-            this.tabCassa.Controls.Add(this.num10euro);
-            this.tabCassa.Controls.Add(this.num5euro);
-            this.tabCassa.Controls.Add(this.num2euro);
-            this.tabCassa.Controls.Add(this.num1euro);
-            this.tabCassa.Controls.Add(this.num50cent);
-            this.tabCassa.Controls.Add(this.num20cent);
-            this.tabCassa.Controls.Add(this.num10cent);
-            this.tabCassa.Controls.Add(this.num5cent);
-            this.tabCassa.Controls.Add(this.num2cent);
-            this.tabCassa.Controls.Add(this.num1cent);
-            this.tabCassa.Controls.Add(this.label12);
-            this.tabCassa.Controls.Add(this.label13);
-            this.tabCassa.Controls.Add(this.label14);
-            this.tabCassa.Controls.Add(this.label15);
-            this.tabCassa.Controls.Add(this.label16);
-            this.tabCassa.Controls.Add(this.label17);
-            this.tabCassa.Controls.Add(this.label18);
-            this.tabCassa.Controls.Add(this.label8);
-            this.tabCassa.Controls.Add(this.label9);
-            this.tabCassa.Controls.Add(this.label10);
-            this.tabCassa.Controls.Add(this.label11);
-            this.tabCassa.Controls.Add(this.label6);
-            this.tabCassa.Controls.Add(this.label7);
-            this.tabCassa.Controls.Add(this.label5);
-            this.tabCassa.Controls.Add(this.label4);
-            this.tabCassa.Location = new System.Drawing.Point(4, 22);
-            this.tabCassa.Name = "tabCassa";
-            this.tabCassa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCassa.Size = new System.Drawing.Size(445, 243);
-            this.tabCassa.TabIndex = 0;
-            this.tabCassa.Text = "Cassa";
-            this.tabCassa.UseVisualStyleBackColor = true;
+            this.tabKassa.Controls.Add(this.num500euro);
+            this.tabKassa.Controls.Add(this.num200euro);
+            this.tabKassa.Controls.Add(this.num100euro);
+            this.tabKassa.Controls.Add(this.num50euro);
+            this.tabKassa.Controls.Add(this.num20euro);
+            this.tabKassa.Controls.Add(this.num10euro);
+            this.tabKassa.Controls.Add(this.num5euro);
+            this.tabKassa.Controls.Add(this.num2euro);
+            this.tabKassa.Controls.Add(this.num1euro);
+            this.tabKassa.Controls.Add(this.num50cent);
+            this.tabKassa.Controls.Add(this.num20cent);
+            this.tabKassa.Controls.Add(this.num10cent);
+            this.tabKassa.Controls.Add(this.num5cent);
+            this.tabKassa.Controls.Add(this.num2cent);
+            this.tabKassa.Controls.Add(this.num1cent);
+            this.tabKassa.Controls.Add(this.label12);
+            this.tabKassa.Controls.Add(this.label13);
+            this.tabKassa.Controls.Add(this.label14);
+            this.tabKassa.Controls.Add(this.label15);
+            this.tabKassa.Controls.Add(this.label16);
+            this.tabKassa.Controls.Add(this.label17);
+            this.tabKassa.Controls.Add(this.label18);
+            this.tabKassa.Controls.Add(this.label8);
+            this.tabKassa.Controls.Add(this.label9);
+            this.tabKassa.Controls.Add(this.label10);
+            this.tabKassa.Controls.Add(this.label11);
+            this.tabKassa.Controls.Add(this.label6);
+            this.tabKassa.Controls.Add(this.label7);
+            this.tabKassa.Controls.Add(this.label5);
+            this.tabKassa.Controls.Add(this.label4);
+            this.tabKassa.Location = new System.Drawing.Point(4, 22);
+            this.tabKassa.Name = "tabKassa";
+            this.tabKassa.Padding = new System.Windows.Forms.Padding(3);
+            this.tabKassa.Size = new System.Drawing.Size(445, 243);
+            this.tabKassa.TabIndex = 0;
+            this.tabKassa.Text = "Kassa";
+            this.tabKassa.UseVisualStyleBackColor = true;
             // 
             // num500euro
             // 
-            this.num500euro.Location = new System.Drawing.Point(263, 177);
+            this.num500euro.Location = new System.Drawing.Point(64, 23);
             this.num500euro.Name = "num500euro";
             this.num500euro.Size = new System.Drawing.Size(120, 20);
             this.num500euro.TabIndex = 29;
             // 
             // num200euro
             // 
-            this.num200euro.Location = new System.Drawing.Point(263, 151);
+            this.num200euro.Location = new System.Drawing.Point(64, 49);
             this.num200euro.Name = "num200euro";
             this.num200euro.Size = new System.Drawing.Size(120, 20);
             this.num200euro.TabIndex = 28;
             // 
             // num100euro
             // 
-            this.num100euro.Location = new System.Drawing.Point(263, 125);
+            this.num100euro.Location = new System.Drawing.Point(64, 75);
             this.num100euro.Name = "num100euro";
             this.num100euro.Size = new System.Drawing.Size(120, 20);
             this.num100euro.TabIndex = 27;
             // 
             // num50euro
             // 
-            this.num50euro.Location = new System.Drawing.Point(263, 99);
+            this.num50euro.Location = new System.Drawing.Point(64, 101);
             this.num50euro.Name = "num50euro";
             this.num50euro.Size = new System.Drawing.Size(120, 20);
             this.num50euro.TabIndex = 26;
             // 
             // num20euro
             // 
-            this.num20euro.Location = new System.Drawing.Point(263, 74);
+            this.num20euro.Location = new System.Drawing.Point(64, 127);
             this.num20euro.Name = "num20euro";
             this.num20euro.Size = new System.Drawing.Size(120, 20);
             this.num20euro.TabIndex = 25;
             // 
             // num10euro
             // 
-            this.num10euro.Location = new System.Drawing.Point(263, 49);
+            this.num10euro.Location = new System.Drawing.Point(64, 153);
             this.num10euro.Name = "num10euro";
             this.num10euro.Size = new System.Drawing.Size(120, 20);
             this.num10euro.TabIndex = 24;
             // 
             // num5euro
             // 
-            this.num5euro.Location = new System.Drawing.Point(263, 23);
+            this.num5euro.Location = new System.Drawing.Point(64, 179);
             this.num5euro.Name = "num5euro";
             this.num5euro.Size = new System.Drawing.Size(120, 20);
             this.num5euro.TabIndex = 23;
             // 
             // num2euro
             // 
-            this.num2euro.Location = new System.Drawing.Point(64, 201);
+            this.num2euro.Location = new System.Drawing.Point(263, 23);
             this.num2euro.Name = "num2euro";
             this.num2euro.Size = new System.Drawing.Size(120, 20);
             this.num2euro.TabIndex = 22;
             // 
             // num1euro
             // 
-            this.num1euro.Location = new System.Drawing.Point(64, 175);
+            this.num1euro.Location = new System.Drawing.Point(263, 49);
             this.num1euro.Name = "num1euro";
             this.num1euro.Size = new System.Drawing.Size(120, 20);
             this.num1euro.TabIndex = 21;
             // 
             // num50cent
             // 
-            this.num50cent.Location = new System.Drawing.Point(64, 149);
+            this.num50cent.Location = new System.Drawing.Point(262, 75);
             this.num50cent.Name = "num50cent";
             this.num50cent.Size = new System.Drawing.Size(120, 20);
             this.num50cent.TabIndex = 20;
             // 
             // num20cent
             // 
-            this.num20cent.Location = new System.Drawing.Point(64, 123);
+            this.num20cent.Location = new System.Drawing.Point(262, 101);
             this.num20cent.Name = "num20cent";
             this.num20cent.Size = new System.Drawing.Size(120, 20);
             this.num20cent.TabIndex = 19;
             // 
             // num10cent
             // 
-            this.num10cent.Location = new System.Drawing.Point(64, 100);
+            this.num10cent.Location = new System.Drawing.Point(262, 127);
             this.num10cent.Name = "num10cent";
             this.num10cent.Size = new System.Drawing.Size(120, 20);
             this.num10cent.TabIndex = 18;
             // 
             // num5cent
             // 
-            this.num5cent.Location = new System.Drawing.Point(64, 74);
+            this.num5cent.Location = new System.Drawing.Point(263, 153);
             this.num5cent.Name = "num5cent";
             this.num5cent.Size = new System.Drawing.Size(120, 20);
             this.num5cent.TabIndex = 17;
             // 
             // num2cent
             // 
-            this.num2cent.Location = new System.Drawing.Point(64, 49);
+            this.num2cent.Location = new System.Drawing.Point(263, 179);
             this.num2cent.Name = "num2cent";
             this.num2cent.Size = new System.Drawing.Size(120, 20);
             this.num2cent.TabIndex = 16;
             // 
             // num1cent
             // 
-            this.num1cent.Location = new System.Drawing.Point(64, 23);
+            this.num1cent.Location = new System.Drawing.Point(263, 205);
             this.num1cent.Name = "num1cent";
             this.num1cent.Size = new System.Drawing.Size(120, 20);
             this.num1cent.TabIndex = 15;
@@ -341,7 +341,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(219, 177);
+            this.label12.Location = new System.Drawing.Point(21, 25);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 14;
@@ -350,7 +350,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(219, 149);
+            this.label13.Location = new System.Drawing.Point(21, 51);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 13);
             this.label13.TabIndex = 13;
@@ -359,7 +359,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(219, 123);
+            this.label14.Location = new System.Drawing.Point(21, 77);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(34, 13);
             this.label14.TabIndex = 12;
@@ -368,7 +368,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(219, 101);
+            this.label15.Location = new System.Drawing.Point(21, 103);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(28, 13);
             this.label15.TabIndex = 11;
@@ -377,7 +377,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(219, 79);
+            this.label16.Location = new System.Drawing.Point(21, 129);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(28, 13);
             this.label16.TabIndex = 10;
@@ -386,7 +386,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(219, 53);
+            this.label17.Location = new System.Drawing.Point(21, 155);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(28, 13);
             this.label17.TabIndex = 9;
@@ -395,7 +395,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(219, 25);
+            this.label18.Location = new System.Drawing.Point(21, 182);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(22, 13);
             this.label18.TabIndex = 8;
@@ -404,7 +404,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 208);
+            this.label8.Location = new System.Drawing.Point(219, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(22, 13);
             this.label8.TabIndex = 7;
@@ -413,7 +413,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 177);
+            this.label9.Location = new System.Drawing.Point(219, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(22, 13);
             this.label9.TabIndex = 6;
@@ -422,7 +422,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 149);
+            this.label10.Location = new System.Drawing.Point(219, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 13);
             this.label10.TabIndex = 5;
@@ -431,7 +431,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 123);
+            this.label11.Location = new System.Drawing.Point(219, 103);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 4;
@@ -440,7 +440,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 101);
+            this.label6.Location = new System.Drawing.Point(219, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 3;
@@ -449,7 +449,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 79);
+            this.label7.Location = new System.Drawing.Point(219, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 2;
@@ -458,7 +458,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 53);
+            this.label5.Location = new System.Drawing.Point(219, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 1;
@@ -467,7 +467,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 25);
+            this.label4.Location = new System.Drawing.Point(219, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 0;
@@ -559,7 +559,7 @@
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // CassaPage
+            // KassaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -574,14 +574,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "CassaPage";
+            this.Name = "KassaPage";
             this.Text = "Form1";
-            this.VisibleChanged += new System.EventHandler(this.CassaPage_VisibleChanged);
+            this.VisibleChanged += new System.EventHandler(this.KassaPage_VisibleChanged);
             this.gbType.ResumeLayout(false);
             this.gbType.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabCassa.ResumeLayout(false);
-            this.tabCassa.PerformLayout();
+            this.tabKassa.ResumeLayout(false);
+            this.tabKassa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num500euro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num200euro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num100euro)).EndInit();
@@ -612,9 +612,9 @@
         private System.Windows.Forms.GroupBox gbType;
         private System.Windows.Forms.RadioButton rbAfromen;
         private System.Windows.Forms.RadioButton rbBon;
-        private System.Windows.Forms.RadioButton rbCassa;
+        private System.Windows.Forms.RadioButton rbKassa;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabCassa;
+        private System.Windows.Forms.TabPage tabKassa;
         private System.Windows.Forms.TabPage tabBonAfromen;
         private System.Windows.Forms.Button btnOpslaan;
         private System.Windows.Forms.DateTimePicker dtpDate;
