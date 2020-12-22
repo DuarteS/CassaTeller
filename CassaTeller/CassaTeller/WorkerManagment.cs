@@ -24,5 +24,15 @@ namespace KassaTeller
         {
             DBaccess.addWorker(firstName, lastName);
         }
+
+        public Worker GetWorkerByID(int ID)
+        {
+            return DBaccess.GetWorkerByID(ID);
+        }
+
+        public void WorkerUpdateInfo(int id,string firstName,string lastName)
+        {
+            DBaccess.UpdateWorkerInfo(id,firstName,lastName);
+        }
     }
 }

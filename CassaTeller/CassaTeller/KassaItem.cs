@@ -85,7 +85,7 @@ namespace KassaTeller
             }
         }
 
-        public KassaItem(DateTime dateTime,int worker,decimal total,bool inKassa,string description)
+        public KassaItem(DateTime dateTime,int worker, decimal total,bool inKassa,string description)
         {
             DateTime = dateTime;
             Worker = worker;

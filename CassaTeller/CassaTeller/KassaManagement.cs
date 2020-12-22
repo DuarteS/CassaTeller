@@ -115,5 +115,10 @@ namespace KassaTeller
 
             return false;
         }
+
+        public KassaItem[] getAllItems()
+        {
+            return DBaccess.GetAllItems();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Globalization;
+using System.IO;
 
 namespace KassaTeller
 {
@@ -30,7 +31,25 @@ namespace KassaTeller
 
         public DBaccess()
         {
-            connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= KassaData.accdb");
+            string localAppData =
+            Environment.GetFolderPath(
+            Environment.SpecialFolder.LocalApplicationData);
+            string userFilePath
+              = Path.Combine(localAppData, "KassaTeller");
+
+            if (!Directory.Exists(userFilePath))
+                Directory.CreateDirectory(userFilePath);
+
+            //if it's not already there, 
+            //copy the file from the deployment location to the folder
+            string sourceFilePath = Path.Combine(
+              System.Windows.Forms.Application.StartupPath, "KassaData.accdb");
+            string destFilePath = Path.Combine(userFilePath, "KassaData.accdb");
+            if (!File.Exists(destFilePath))
+                File.Copy(sourceFilePath, destFilePath);
+
+
+            connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source= "+destFilePath);
             try
             {
                 connection.Open();
@@ -48,6 +67,7 @@ namespace KassaTeller
             
         }
 
+       
         public void UpdateDayKassa(KassaItem cassaItem)
         {
             OleDbCommand cmd = connection.CreateCommand();
@@ -166,6 +186,34 @@ namespace KassaTeller
             return cassaItems.ToArray();
         }
 
+        public KassaItem[] GetAllItems()
+        {
+            OleDbCommand cmd = connection.CreateCommand();
+            connection.Open();
+            cmd.CommandText = "SELECT * FROM Kassa;";
+            cmd.Connection = connection;
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            List<KassaItem> cassaItems = new List<KassaItem>();
+
+            while (dr.Read())
+            {
+                DateTime date = Convert.ToDateTime(dr[1]);
+                DateTime time = Convert.ToDateTime(dr[2]);
+                DateTime dateTime = date.Date + time.TimeOfDay;
+                int worker = int.Parse(dr[3].ToString());
+                decimal total = decimal.Parse(dr[4].ToString());
+                bool inKassa = (bool)dr[5];
+                string desc = dr[6].ToString();
+                KassaItem item = new KassaItem(dateTime, worker, total, inKassa, desc);
+                cassaItems.Add(item);
+            }
+
+            connection.Close();
+
+            return cassaItems.ToArray();
+        }
+
         public Worker[] GetWorkers()
         {
             OleDbCommand cmd = connection.CreateCommand();
@@ -199,5 +247,42 @@ namespace KassaTeller
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public Worker GetWorkerByID(int ID)
+        {
+
+            OleDbCommand cmd = connection.CreateCommand();
+            connection.Open();
+            cmd.CommandText = "SELECT * FROM Workers WHERE ID = @id";
+            cmd.Connection = connection;
+            cmd.Parameters.AddWithValue("@id", ID);
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            Worker Worker = null;
+
+            while (dr.Read())
+            {
+                Worker = new Worker(int.Parse(dr[0].ToString()), dr[1].ToString(), dr[2].ToString());
+            }
+
+            connection.Close();
+
+            return Worker;
+        }
+
+        public void UpdateWorkerInfo(int id, string firstName, string lastName)
+        {
+            OleDbCommand cmd = connection.CreateCommand();
+            connection.Open();
+            cmd.CommandText = "UPDATE `Workers` SET `FirstName` = @fName ,`LastName` = @lName WHERE `ID` = @id;";
+            cmd.Connection = connection;
+
+            cmd.Parameters.AddWithValue("@fName", firstName);
+            cmd.Parameters.AddWithValue("@lName", lastName);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
     }
 }
